@@ -1,3 +1,14 @@
+/*
+별 찍기 11 - https://www.acmicpc.net/problem/2448
+
+
+1. 문제 이해 : 30초
+2. 규칙 파악 : 3분 30초
+3. 솔루션 추상화 : 9분 30초
+4. 구현 : 8분 30초
+5. 에러 찾기 : 20분 이상
+*/
+
 #include <iostream>
 #include <vector>
 
@@ -15,7 +26,6 @@ void drow(int x, int y, int depth, int length, int height)
     board[x][y + 1] = '*';
     for (int i = 0; 5 > i; i++)
       board[x + 1][y - 2 + i] = '*';
-    // cout << "x, y " << x << ' ' << y << '\n';
     return;
   }
 
@@ -23,7 +33,6 @@ void drow(int x, int y, int depth, int length, int height)
   int next_length = length / 2;
   int next_height = height / 2;
 
-  // cout << x << ' ' << y << ' ' << next_length << ' ' << next_height << '\n';
   if (next_height != 1)
     drow(x - next_height, y, next_depth, next_length, next_height);
   else
